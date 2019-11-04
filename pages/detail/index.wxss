@@ -1,0 +1,49 @@
+/* pages/detail/index.wxss */
+
+page {
+  background-color: #eaeaea;
+}
+
+.title {
+  height: 50px;
+  line-height: 50px;
+  margin-left: 20px;
+}
+
+.detail {
+  height: 50px;
+  line-height: 50px;
+  display: flex;
+  align-items: center;
+  background: white;
+  margin-top: 5px;
+}
+
+.detail image {
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.detail-no {
+  width: 10%;
+  text-align: center;
+}
+
+.detail-name {
+  width: 20%;
+  text-align: center;
+}
+
+.detail-vehicleNo {
+  width: 30%;
+  text-align: center;
+}
+
+.detail-time {
+  width: 20%;
+  text-align: center;
+}

@@ -1,0 +1,101 @@
+/* pages/logs/index.wxss */
+
+page {
+  background-color: #eaeaea;
+}
+
+.title {
+  height: 50px;
+  line-height: 50px;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.text-day {
+  border-bottom: 3px solid #005cb7;
+}
+.date-pick{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 5px;
+  height: 30px;
+}
+.statrdate {
+  width: 45%;
+  padding-left: 10px;
+  text-align: center;
+}
+
+.text {
+  padding-right: 10px;
+}
+
+.enddate {
+  width: 45%;
+  text-align: center;
+}
+.date {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.date-left {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.date-right {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+}
+
+.div {
+  background-color: white;
+  margin-top: 50px;
+}
+
+.detail {
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+}
+
+.flex-wrp {
+  display: flex;
+  text-align: center;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+}
+
+.bc_green {
+  width: 33.33333%;
+}
+
+.bc_red {
+  width: 33.33333%;
+}
+
+.bc_blue {
+  width: 33.33333%;
+}
+
+.div-datestr {
+  text-align: center;
+  padding-top: 10px;
+}

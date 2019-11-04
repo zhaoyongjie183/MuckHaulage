@@ -1,0 +1,54 @@
+/* pages/index/index.wxss */
+
+page {
+  background-color: #eaeaea;
+}
+
+.div {
+  background-color: white;
+  margin-top: 10px;
+}
+
+.div-view {
+  margin-left: 10px;
+}
+
+.content {
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.content-text {
+  margin-right: 30px;
+  font-size: 15px;
+}
+
+.content-text-two {
+  font-size: 15px;
+  font-weight: bold; /*设置字体加粗*/
+}
+
+.station {
+  margin-top: 50px;
+}
+
+.station-text {
+  margin-bottom: 10px;
+}
+
+.station-name {
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.station-img {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  justify-content: center;
+  float: right;
+  margin-top: 10px;
+}

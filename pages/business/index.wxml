@@ -1,0 +1,53 @@
+<view class="title">
+  <text class="{{dataType==1?'text-day':''}}"  bindtap="clickDays" decode="true">&nbsp;&nbsp;日报&nbsp;&nbsp;</text>
+  <text decode="true">&nbsp;&nbsp;|&nbsp;&nbsp;</text>
+  <text class="{{dataType==2?'text-day':''}}"  decode="true" bindtap="clickMonth">&nbsp;&nbsp;月报&nbsp;&nbsp;</text>
+  <text decode="true">&nbsp;&nbsp;|&nbsp;&nbsp;</text>
+  <text class="{{dataType==3?'text-day':''}}" bindtap="clickCustom" decode="true">&nbsp;&nbsp;自定义&nbsp;&nbsp;</text>
+</view>
+<view wx:if="{{dataType<3}}" class="date">
+  <image bindtap="clickLeft" class="date-left" src="../../images/left.png"></image>
+  <text>{{date}}</text>
+  <image bindtap="clickRight" class="date-right" src="../../images/right.png"></image>
+</view>
+<view  wx:if="{{dataType==3}}" class="date-pick">
+<picker class="statrdate" 
+mode="date" 
+value="{{startdate}}" 
+start="2015-09-01" 
+end="2099-01-01"
+bindchange="bindDateChange">
+ <view class="picker">
+       {{startdate}}
+    </view>
+  </picker>
+  <text class="text">至</text>
+  <picker class="enddate" 
+  mode="date" 
+  value="{{enddate}}" 
+  start="2015-09-01" 
+  end="2099-01-01" 
+  bindchange="bindEndDateChange">
+ <view class="picker">
+       {{enddate}}
+    </view>
+  </picker>
+</view>
+<view class="div">
+  <view class="div-datestr">{{datestr}}</view>
+  <view class="flex-wrp" style="flex-direction:row;">
+    <view class="bc_green">
+      <view>运输车辆</view>
+      <view>10</view>
+    </view>
+    <view class="bc_red">
+      <view>运输总车次</view>
+      <view>200</view>
+    </view>
+    <view class="bc_blue">
+      <view>运输总金额</view>
+      <view>200</view>
+    </view>
+  </view>
+  <view class="detail" bindtap="clickDetail">查看详细信息></view>
+</view>

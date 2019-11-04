@@ -1,0 +1,35 @@
+<view class="div">
+  <view class="div-view">
+    <view class="content">
+      <text class="content-text">绑定手机</text>
+      <text class="content-text-two">13223213456</text>
+    </view>
+    <view class="content">
+      <text class="content-text">当前版本</text>
+      <text class="content-text-two">1.0.0</text>
+    </view>
+    <view class="station">
+      <view class="station-text">
+        <text>当前站点</text>
+      </view>
+      <!-- <view class="picker">
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{objectArray}}" range-key="name" data-id='{{objectArray[index].id}}'>
+          <view>
+            {{objectArray[index].name}}
+          </view>
+        </picker>
+      </view> -->
+      <view>
+        <block wx:for="{{objectArray}}" wx:key="index">
+          <view class="station-name" id='{{index}}' bindtap='itemClick'>
+            {{item.name}}
+            <image wx:if="{{currentIndex==index}}" class="station-img" src="../../images/check.png"></image>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view>
+      <text decode="true">&nbsp;</text>
+    </view>
+  </view>
+</view>

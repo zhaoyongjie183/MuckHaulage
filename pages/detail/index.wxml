@@ -1,0 +1,11 @@
+<!--pages/detail/index.wxml-->
+<view class="title">
+  <text>{{dateStr}}</text>
+</view>
+<view class="detail" wx:for="{{detailData}}" wx:for-index="idx" wx:for-item="itemName"  wx:key="*this" >
+ <text class="detail-no">{{idx+1}}</text>
+ <text class="detail-name">{{itemName.name}}</text>
+ <text class="detail-vehicleNo">{{itemName.vehicleNo}}</text>
+ <text class="detail-time">{{itemName.time}}</text>
+ <image  bindtap="clickImage" src="../../images/right.png"></image>
+</view>
