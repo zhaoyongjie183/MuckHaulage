@@ -2,39 +2,25 @@
   <view class="title">
     <text>绑定用户</text>
   </view>
-  <view>
-    <view class="ziliao">
-      <text>填写必要资料</text>
-    </view>
-    <view class="biaoge">
-      <view class="phone">
-        <text style="padding-left:5px;padding-right: 10px;height:50px;line-height:50px;">手机号 </text>
-        <input type="number" maxlength="11" style="height:50px;line-height:50px;" bindinput="bindKeyInputPhone" placeholder="请输入用户手机号" />
-      </view>
-      <view class="name">
-        <text decode="{{true}}" style="padding-left:5px;padding-right: 10px;height:50px;line-height:50px;">姓&nbsp;&nbsp;&nbsp;&nbsp;名 </text>
-        <input style="height:50px;line-height:50px;" bindinput="bindKeyInputName" placeholder="请输入用户姓名" />
-      </view>
-    </view>
+  <view class="ziliao">
+    <text>验证手机号</text>
   </view>
   <view>
-    <view class="leixing">
-      <text>选择用户类型</text>
-    </view>
-    <view class="select">
-      <picker style="padding-left:5px;" bindchange="bindPickerChange" value="{{index}}" range="{{objectArray}}" range-key="name" data-id='{{objectArray[index].id}}'>
-        <view class="picker">
-          {{objectArray[index].name}}
-        </view>
-      </picker>
+    <view class="biaoge">
+      <view class="phone">
+        <text class="phonetitle">手机号 </text>
+        <input type="number" maxlength="11" class="phoneinput" bindinput="bindKeyInputPhone"
+          placeholder="请输入手机号" />
+      </view>
+      <view class="securitycode">
+        <text class="phonetitle">验证码</text>
+        <input class="securitycodeinput" bindinput="bindKeyInputName" placeholder="请输入短信验证码" />
+        <button bindtap="getverifycode" disabled="{{smsFlag}}" class="flex-item-getcode-ex">{{sendTime}}</button>
+      </view>
     </view>
   </view>
   <view class="btn">
-    <button type="primary" class="btn-btn" bindtap="clickBinding">绑定</button>
+    <button  class="btn-btn" bindtap="clickBinding">提交</button>
   </view>
-  <view class="tel">
-    <text>——</text>
-    <text class="tel-text">渣运轻松管理  TEL:13882083384</text>
-    <text>——</text>
-  </view>
+
 </view>

@@ -3,40 +3,90 @@ page {
 }
 
 .title {
-  width: 100px;
+  width: 120px;
+  height: 55px;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.00);
+  border-radius: 0px;
+  font-size: 20px;
+  font-family: 微软雅黑, 微软雅黑-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #000000;
   margin: 0 auto;
-  height: 100px;
-  line-height: 100px;
+  line-height: 55px;
   font-size: 20px;
 }
 
 .ziliao {
-  margin-left: 15%;
+  padding-left: 45px;
+  width: 100px;
+  height: 19px;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.00);
+  border-radius: 0px;
+  font-size: 14px;
+  font-family: 微软雅黑, 微软雅黑-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #000000;
+  margin-top: 35px;
 }
 
 .phone {
   display: flex;
-  border: 1px solid black;
 }
 
-.name {
+.securitycode {
   display: flex;
-  border-bottom: 1px solid black;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+  margin-top: 33px;
+}
+
+.securitycodeinput {
+  width: 139px;
+  height: 39px;
+  opacity: 1;
+  background: #ffffff;
+  border-left: 1px solid #999999;
+  border-bottom: 1px solid #999999;
+  border-top: 1px solid #999999;
+  border-radius: 3px;
+  font-size: 14px;
+  font-family: 微软雅黑, 微软雅黑-Regular;
+  font-weight: 400;
+  color: #000000;
+}
+
+.phonetitle {
+  width: 42px;
+  height: 50px;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.00);
+  border-radius: 0px;
+  font-size: 14px;
+  font-family: 微软雅黑, 微软雅黑-Regular;
+  font-weight: 400;
+  text-align: left;
+  line-height: 50px;
+  margin-right: 10px;
+  color: #000000;
+}
+
+.phoneinput {
+  width: 239px;
+  height: 39px;
+  background: #ffffff;
+  border: 1px solid #999999;
+  border-radius: 3px;
+  font-size: 14px;
+  font-family: 微软雅黑, 微软雅黑-Regular;
+  font-weight: 400;
+  color: #000000;
 }
 
 .biaoge {
-  background: white;
-  width: 70%;
-  margin-left: 15%;
-  margin-top: 10px;
-  height: 100px;
-}
-
-.leixing {
-  margin-left: 15%;
-  margin-top: 30px;
+  padding-left: 45px;
+  padding-top: 40px;
 }
 
 .select {
@@ -50,20 +100,37 @@ page {
 }
 
 .btn {
-  margin-top: 50px;
+  margin-top: 70px;
 }
 
 .btn-btn {
-  width: 50%;
-  margin-right: 28%;
-}
-
-.tel {
-  margin-top: 50px;
+  width: 211px;
+  height: 38px;
+  opacity: 1;
+  border: 1px solid #1a6b58;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: 微软雅黑, 微软雅黑-Bold;
+  font-weight: 700;
   text-align: center;
+  color: #1a6b58;
 }
 
-.tel-text {
-  background-color: white;
-  height: 100px;
+.flex-item-getcode-ex {
+  width: 100px;
+  line-height: 41px;
+  height: 41px;
+  opacity: 1;
+  background: #1a6b58;
+  border-radius: 0px;
+  font-size: 14px;
+  font-family: 微软雅黑, 微软雅黑-Regular;
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+  margin-left: -3px;
+  border-right: 1px solid #999999;
+  border-bottom: 1px solid #999999;
+  border-top: 1px solid #999999;
+  border-radius: 3px;
 }
