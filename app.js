@@ -34,6 +34,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    token:'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIyIiwic2lkIjoiMSIsImV4cCI6MTAxOTM0NDQxOTczfQ.YHCbojBAlcDCX_ZfYmGyfY415t3KVaiBiqwOPWxABMk'
   }
 })

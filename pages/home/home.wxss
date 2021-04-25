@@ -1,1 +1,73 @@
 /* pages/home/home.wxss */
+page {
+  background-color: #eaeaea;
+}
+
+swiper {
+  width: 100%;
+  height: calc(100vm * 360 / 1125);
+}
+
+image {
+  width: 100%;
+}
+
+.content {
+  display: flex;
+}
+
+.msg {
+  padding-left: 15px;
+  padding-top: 22px;
+  width: 260px;
+  height: 66px;
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.00);
+  border-radius: 0px;
+  font-size: 16px;
+  text-align: left;
+  color: #000000;
+}
+.msgview{
+  height: 42px;
+}
+.time {
+  margin-top: 10px;
+  float: left;
+  width: 100px;
+  height: 15px;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.00);
+  border-radius: 0px;
+  font-size: 11px;
+  font-family: 微软雅黑, 微软雅黑-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #666666;
+}
+
+.typemsg {
+  margin-top: 10px;
+  float: right;
+  width: 44px;
+  height: 15px;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.00);
+  border-radius: 0px;
+  font-size: 11px;
+  font-family: 微软雅黑, 微软雅黑-Regular;
+  font-weight: 400;
+  text-align: right;
+  color: #666666;
+}
+.tupian
+{
+  padding-left: 11px;
+  margin-top: 22px;
+  width: 74px;
+  height: 66px;
+}
+.tupian image
+{
+  height: 100%;
+}

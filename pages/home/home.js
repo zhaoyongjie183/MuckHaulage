@@ -1,17 +1,45 @@
 // pages/home/home.js
+const WXAPI = require('../../utils/api')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    background: [
+      'https://transapi.flsj.vip/trans/v1/img/bunner2.jpg', 'https://transapi.flsj.vip/trans/v1/img/bunner1.jpg'
+    ],
+    autoplay: true,
+    interval: 2000,
+    list: [],
+    baseUrl: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let that = this;
+    wx.showLoading({
+      "mask": true,
+      "title": "加载中..."
+    });
+    WXAPI.homeList().then(function (res) {
+      wx.hideLoading()
+      if (res.code == 200) {
+        that.setData({
+          list: res.data.list,
+          baseUrl: WXAPI.API_BASE_URL
+        });
+      }
+    }).catch(function (e) {
+      console.log(e)
+      wx.showToast({
+        title: e.msg,
+        icon: 'none'
+      })
+    })
+
 
   },
 
@@ -27,11 +55,11 @@ Page({
    */
   onShow: function () {
     if (typeof this.getTabBar === 'function' &&
-    this.getTabBar()) {
-    this.getTabBar().setData({
-      selected: 0
-    })
-  }
+      this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 0
+      })
+    }
   },
 
   /**

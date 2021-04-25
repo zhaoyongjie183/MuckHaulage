@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/binding/index",
-    "pages/home/home"
+    "pages/home/home",
+    "pages/binding/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

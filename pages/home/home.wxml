@@ -1,2 +1,20 @@
-<!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<view>
+  <swiper autoplay="{{autoplay}}" interval="{{interval}}" circular indicator-dots indicator-color="#0094ff"
+    indicator-active-color="#ff0094">
+    <block wx:for="{{background}}">
+      <swiper-item>
+        <image mode="widthFix" src="{{item}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class="content">
+<view class="msg">
+<view class="msgview">相对LED显示屏提醒，更稳定</view>
+<text class="time">2010年4月13日</text>
+<text class="typemsg">平台消息</text>
+</view>
+<view class="tupian">
+  <image src="../../images/a.jpg"></image>
+</view>
+</view>
