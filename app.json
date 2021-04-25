@@ -1,11 +1,7 @@
 {
   "pages": [
     "pages/binding/index",
-    "pages/detail/index",
-    "pages/business/index",
-    "pages/my/index",
-    "pages/image/index",
-    "pages/monthdetail/index"
+    "pages/home/home"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -14,18 +10,19 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
+    "custom": true,
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
     "list": [
       {
-        "selectedIconPath": "images/business.png",
-        "iconPath": "images/business.png",
-        "pagePath": "pages/business/index",
-        "text": "经营分析"
+        "pagePath": "pages/home/home",
+        "text": "组件"
       },
       {
-        "selectedIconPath": "images/my.png",
-        "iconPath": "images/my.png",
-        "pagePath": "pages/my/index",
-        "text": "我的"
+        "pagePath": "pages/home/home",
+        "text": "接口"
       }
     ]
   },

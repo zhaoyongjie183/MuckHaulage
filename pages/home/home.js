@@ -1,36 +1,13 @@
-// pages/index/index.js
+// pages/home/home.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    objectArray: [
-      {
-        id: 0,
-        name: '重庆鱼嘴物流站点'
-      },
-      {
-        id: 1,
-        name: '成都温江搅拌厂'
-      }
-    ],
-    index: 0,
-    currentIndex: 0,//记录当前选中数据
-    
+
   },
-  bindPickerChange: function (e) {
-    this.setData({
-      index: e.detail.value
-    })
-  },
-  itemClick: function (res){
-    console.log("index-->" + res.currentTarget.id);
-    var position = res.currentTarget.id;
-    this.setData({
-      currentIndex: position,
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -49,7 +26,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if (typeof this.getTabBar === 'function' &&
+    this.getTabBar()) {
+    this.getTabBar().setData({
+      selected: 0
+    })
+  }
   },
 
   /**

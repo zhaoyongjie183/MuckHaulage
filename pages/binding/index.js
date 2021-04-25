@@ -93,7 +93,7 @@ Page({
   },
   clickBinding:function(){
     wx.switchTab({
-      url: '../my/index'
+      url: '../home/home'
     })
   },
   onLoad: function () {

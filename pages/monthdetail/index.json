@@ -1,9 +1,0 @@
-{
-  "navigationBarTitleText": "详细数据",
-  "backgroundTextStyle": "dark",
-  "navigationBarTextStyle": "white",
-  "navigationBarBackgroundColor": "#424242",
-  "usingComponents": {
-    "ec-canvas": "../../ec-canvas/ec-canvas"
-  }
-}
