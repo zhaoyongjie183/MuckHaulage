@@ -1,20 +1,20 @@
 <view>
   <swiper autoplay="{{autoplay}}" interval="{{interval}}" circular indicator-dots indicator-color="#0094ff"
     indicator-active-color="#ff0094">
-    <block wx:for="{{background}}">
+    <block wx:for="{{bunnerList}}" wx:for-item="item">
       <swiper-item>
-        <image mode="widthFix" src="{{item}}"></image>
+        <image mode="widthFix" src="{{baseUrl}}{{item.picpath}}"></image>
       </swiper-item>
     </block>
   </swiper>
 </view>
-<view class="content">
-<view class="msg">
-<view class="msgview">相对LED显示屏提醒，更稳定</view>
-<text class="time">2010年4月13日</text>
-<text class="typemsg">平台消息</text>
-</view>
-<view class="tupian">
-  <image src="../../images/a.jpg"></image>
-</view>
+<view class="content" wx:for="{{list}}" wx:for-item="item" wx:key="id">
+  <view class="msg">
+    <view class="msgview">{{item.overview}}</view>
+    <text class="time">{{item.creattime}}</text>
+    <text class="typemsg">{{item.newstype==1?'平台消息':'站点消息'}}</text>
+  </view>
+  <view class="tupian">
+    <image src="{{baseUrl}}{{item.picpath}}"></image>
+  </view>
 </view>

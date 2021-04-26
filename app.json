@@ -1,7 +1,12 @@
 {
   "pages": [
+    "pages/login/index",
+    "pages/business/index",
+    "pages/detail/index",
+    "pages/record/index",
+    "pages/monthdetail/index",
     "pages/home/home",
-    "pages/binding/index"
+    "pages/my/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -18,11 +23,19 @@
     "list": [
       {
         "pagePath": "pages/home/home",
-        "text": "组件"
+        "text": "首页"
       },
       {
-        "pagePath": "pages/home/home",
-        "text": "接口"
+        "pagePath": "pages/business/index",
+        "text": "统计查询"
+      },
+      {
+        "pagePath": "pages/business/index",
+        "text": "管理"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "text": "我的"
       }
     ]
   },

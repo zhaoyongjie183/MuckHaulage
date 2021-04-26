@@ -34,7 +34,7 @@ image {
 .time {
   margin-top: 10px;
   float: left;
-  width: 100px;
+  width: 150px;
   height: 15px;
   opacity: 1;
   background: rgba(0, 0, 0, 0.00);

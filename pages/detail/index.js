@@ -1,57 +1,56 @@
-// pages/home/home.js
-const WXAPI = require('../../utils/api')
+// pages/detail/index.js
+var util = require("../../utils/util.js")
+var WXAPI = require("../../utils/api.js")
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    autoplay: true,
-    interval: 2000,
-    list: [],
-    bunnerList:[],
-    baseUrl: ''
+id:'',
+baseUrl:''
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    let that = this;
+  getData: function () {
+    var that = this;
     wx.showLoading({
       "mask": true,
       "title": "加载中..."
     });
-    WXAPI.homeList().then(function (res) {
+    WXAPI.driverDetail({
+      id: that.data.id
+    }).then(function (res) {
       wx.hideLoading()
-      if (res.code == 1) {
+      debugger;
+      if (res.code != 1) {
+        wx.showToast({
+          title: res.msg,
+          icon: 'none',
+          duration: 1500
+        })
+      } else {
         that.setData({
-          list: res.data,
-          baseUrl: WXAPI.BASE_URL
-        });
+          list: res.data
+        })
       }
     }).catch(function (e) {
+      wx.hideLoading()
       console.log(e)
       wx.showToast({
-        title: e.msg,
+        title: '网络开小差了',
         icon: 'none'
       })
     })
-    WXAPI.bunnerList().then(function (res) {
-      wx.hideLoading()
-      if (res.code == 1) {
-        that.setData({
-          bunnerList: res.data,
-        });
-      }
-    }).catch(function (e) {
-      console.log(e)
-      wx.showToast({
-        title: e.msg,
-        icon: 'none'
-      })
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    var str = options.id
+    this.setData({
+      id: str,
+      baseUrl: WXAPI.BASE_URL
     })
-    console.log(this.data);
+    this.getData();
   },
 
   /**
@@ -65,12 +64,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if (typeof this.getTabBar === 'function' &&
-      this.getTabBar()) {
-      this.getTabBar().setData({
-        selected: 0
-      })
-    }
+
   },
 
   /**

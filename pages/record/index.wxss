@@ -1,0 +1,54 @@
+/* pages/record/index.wxss */
+page {
+  background-color: #eaeaea;
+}
+
+.title {
+  margin-top: 12px;
+}
+
+.text-day {
+  border-bottom: 3px solid #1a6b58;
+  color: #1a6b58;
+}
+
+.content {
+  display: flex;
+  margin-right: 10px;
+  margin-left: 10px;
+  border: 1px solid #1a6b58;
+  background: #ffffff;
+  margin-top: 18px;
+  height: 85px;
+}
+
+.msg {
+  width: 80%;
+}
+
+.msgview {
+  margin-left: 12px;
+  margin-top: 14px;
+}
+
+.chepai {
+  float: right;
+  padding-right: 30px;
+}
+
+.tupian {
+  width: 74px;
+  height: 42px;
+  opacity: 1;
+  background: #ffffff;
+  border-radius: 0px;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  padding-right: 10px;
+}
+
+.tupian image {
+  width: 74px;
+  height: 42px;
+}

@@ -1,0 +1,47 @@
+page
+{
+  background: #e4e4e4;
+}
+.tupian {
+  height: 210px;
+}
+
+.tupian image {
+  height: 210px;
+}
+
+.neirong {
+  height: 35px;
+  padding-left: 12px;
+  background: white;
+  padding-right: 19px;
+  display: flex;
+  margin-bottom: 3px;
+}
+
+.view1 {
+  width: 42px;
+  height: 35px;
+  background: rgba(0, 0, 0, 0.00);
+  border-radius: 0px;
+  font-size: 14px;
+  font-family: 微软雅黑, 微软雅黑-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #6b6b6b;
+  margin-right: 30px;
+  line-height: 35px;
+  text-align: left;
+}
+
+.view2 {
+  text-align: center;
+  line-height: 35px;
+  background: #ffffff;
+  border: 1px solid rgba(102, 102, 102, 0.00);
+  border-radius: 1px;
+  font-size: 14px;
+  font-family: 微软雅黑, 微软雅黑-Regular;
+  font-weight: 400;
+  color: #000000;
+}

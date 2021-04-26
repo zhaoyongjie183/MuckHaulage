@@ -1,0 +1,27 @@
+<view class="tupian">
+  <image src="../../images/home.png"></image>
+</view>
+<view class="neirong">
+  <view class="view1">驾驶员</view>
+  <view class="view2">李三</view>
+</view>
+<view class="neirong">
+  <view class="view1">车牌号</view>
+  <view class="view2">李三</view>
+</view>
+<view class="neirong">
+  <view class="view1">工区</view>
+  <view class="view2">李三</view>
+</view>
+<view class="neirong">
+  <view class="view1">单价</view>
+  <view class="view2">李三</view>
+</view>
+<view class="neirong">
+  <view class="view1">方量</view>
+  <view class="view2">李三</view>
+</view>
+<view class="neirong">
+  <view class="view1">时间</view>
+  <view class="view2">李三</view>
+</view>

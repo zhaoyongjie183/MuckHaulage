@@ -1,0 +1,20 @@
+<view class="title">
+  <text class="{{dataType==1?'text-day':''}}" bindtap="clickALL" decode="true">&nbsp;&nbsp;全部记录&nbsp;&nbsp;</text>
+  <!-- <text class="{{dataType==2?'text-day':''}}" decode="true"
+    bindtap="clickEffectivity">&nbsp;&nbsp;有效记录&nbsp;&nbsp;</text>
+  <text class="{{dataType==3?'text-day':''}}" bindtap="clickError" decode="true">&nbsp;&nbsp;异常记录&nbsp;&nbsp;</text> -->
+</view>
+<view class="content" wx:for="{{list}}" wx:for-item="item" wx:key="id" data-id="{{item.id}}" bindtap="clickDetail">
+  <view class="msg">
+    <view class="msgview">
+      <text>{{item.creattime}}</text>
+    </view>
+    <view class="msgview">
+      <text>{{item.name}}</text>
+      <text class="chepai">{{item.license}}</text>
+    </view>
+  </view>
+  <view class="tupian">
+    <image src="{{baseUrl}}{{item.thumbpath}}"></image>
+  </view>
+</view>

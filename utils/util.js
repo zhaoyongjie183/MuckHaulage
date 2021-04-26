@@ -9,6 +9,35 @@ const formatTime = date => {
   return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
 
+const getCurrentMonthDayNum = date => {
+  let dayAllThisMonth = 31;
+  if (date.getMonth() + 1 != 12) {
+    let currentMonthStartDate = new Date(date.getFullYear() + "/" + (date.getMonth() + 1) + "/01"); // 本月1号的日期
+    let nextMonthStartDate = new Date(date.getFullYear() + "/" + (date.getMonth() + 2) + "/01"); // 下个月1号的日期
+    dayAllThisMonth = (nextMonthStartDate - currentMonthStartDate) / (24 * 3600 * 1000);
+  }
+
+  return dayAllThisMonth;
+}
+
+function stringToDate(dateStr,separator){
+  if(!separator){
+         separator="-";
+  }
+  var dateArr = dateStr.split(separator);
+  var year = parseInt(dateArr[0]);
+  var month;
+  //处理月份为04这样的情况                         
+  if(dateArr[1].indexOf("0") == 0){
+      month = parseInt(dateArr[1].substring(1));
+  }else{
+       month = parseInt(dateArr[1]);
+  }
+  var day = parseInt(dateArr[2]);
+  var date = new Date(year,month -1,day);
+  return date;
+}
+
 const formatDate = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -19,7 +48,7 @@ const formatDateStr = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
   const day = date.getDate()
-  return year+"年"+month+"月"+day+"日";
+  return year + "年" + month + "月" + day + "日";
 }
 
 //当前日期加减天数
@@ -61,5 +90,7 @@ module.exports = {
   formatTime: formatTime,
   formatDate: formatDate,
   mathChangeDate: mathChangeDate,
-  formatDateStr: formatDateStr
+  formatDateStr: formatDateStr,
+  getCurrentMonthDayNum:getCurrentMonthDayNum,
+  stringToDate:stringToDate
 }

@@ -2,58 +2,58 @@ Component({
   data: {
     selected: 0,
     color: "#7A7E83",
-    selectedColor: "#3cc51f",
+    selectedColor: "#1A6B58",
     roleId:'',
     drivertabbar: [{
       pagePath: "../../pages/home/home",
-      iconPath: "/image/icon_component.png",
-      selectedIconPath: "/image/icon_component_HL.png",
+      iconPath: "../images/home.png",
+      selectedIconPath: "../images/homes.png",
       text: "首页"
     }, {
-      pagePath: "../../pages/home/home",
-      iconPath: "/image/icon_API.png",
-      selectedIconPath: "/image/icon_API_HL.png",
+      pagePath: "../../pages/business/index",
+      iconPath: "../images/sum.png",
+      selectedIconPath: "../images/sums.png",
       text: "统计查询"
     },
     {
-      pagePath: "../../pages/home/home",
-      iconPath: "/image/icon_API.png",
-      selectedIconPath: "/image/icon_API_HL.png",
+      pagePath: "../../pages/my/index",
+      iconPath: "../images/me.png",
+      selectedIconPath: "../images/mes.png",
       text: "我的"
     }
   ],
     managetabbar: [{
+      iconPath: "../images/home.png",
+      selectedIconPath: "../images/homes.png",
       pagePath: "../../pages/home/home",
-      iconPath: "/image/icon_component.png",
-      selectedIconPath: "/image/icon_component_HL.png",
       text: "首页"
     }, {
-      pagePath: "../../pages/home/home",
-      iconPath: "/image/icon_API.png",
-      selectedIconPath: "/image/icon_API_HL.png",
+      iconPath: "../images/sum.png",
+      selectedIconPath: "../images/sums.png",
+      pagePath: "../../pages/business/index",
       text: "统计"
     },
     {
+      iconPath: "../images/manager.png",
+      selectedIconPath: "../images/managers.png",
       pagePath: "../../pages/home/home",
-      iconPath: "/image/icon_API.png",
-      selectedIconPath: "/image/icon_API_HL.png",
       text: "管理"
     },
     {
-      pagePath: "../../pages/home/home",
-      iconPath: "/images/my.png",
-      selectedIconPath: "/image/icon_API_HL.png",
+      iconPath: "../images/me.png",
+      selectedIconPath: "../images/mes.png",
+      pagePath: "../../pages/my/index",
       text: "我的"
     }
   ]
   },
   attached() {
-    const roleId = 1
-    if (roleId == '' || roleId == 2) { //普通用户和未登录时默认第一种
+    const roleId = wx.getStorageSync('roleId')
+    if (roleId == '' || roleId == 4) { //普通用户和未登录时默认第一种
         this.setData({
             list: this.data.drivertabbar
         })
-    } else if (roleId == 1) { //vip用户显示第二种
+    } else if (roleId ==3) { //管理员用户显示第二种
         this.setData({
             list: this.data.managetabbar
         })
