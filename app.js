@@ -30,6 +30,6 @@ App({
   },
   globalData: {
     userInfo: null,
-    token:'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIyIiwic2lkIjoiMSIsImV4cCI6MTAxOTM0Nzk1MjQzfQ.xx0Z0_zulyPDRa8ERT15CACw76jlLiEu-oPfZcS1Hoc'
+    token:''
   }
 })

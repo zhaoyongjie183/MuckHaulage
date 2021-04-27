@@ -106,8 +106,8 @@ Page({
       phone: that.data.phone,
       code: that.data.code,
       sessioncode: wx.getStorageSync('longinCode'),
-      nickname: app.globalData.nickName,
-      headimgurl: app.globalData.avatarUrl
+      nickname: app.globalData.userInfo.nickName,
+      headimgurl: app.globalData.userInfo.avatarUrl
     }).then(function (res) {
       wx.hideLoading()
       if (res.code != 1) {

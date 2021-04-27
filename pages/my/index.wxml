@@ -1,2 +1,31 @@
-<!--pages/my/index.wxml-->
-<text>pages/my/index.wxml</text>
+<view class="header">
+  <view class="tupian">
+    <image src="{{userInfos.headimgurl}}"></image>
+  </view>
+  <view class="text">
+    账号：{{userInfos.phone}}
+  </view>
+</view>
+<view class="content">
+  <view class="lianxi">
+    <view class="lianxicontent">联系我们</view>
+    <view style="padding-top:5px">
+      <image src="../../images/rightgreen.png"></image>
+    </view>
+  </view>
+  <view class="bottom"></view>
+  <view class="zhandian">
+    <text>当前站点</text>
+  </view>
+  <view class="bottom"></view>
+  <view class="section">
+    <picker mode="selector" bindchange="bindPickerChange" value="{{list.stationname}}" range-key="{{'stationname'}}" range="{{list}}">
+      <view class="lianxi">
+    <view class="lianxicontent"> {{list[index].stationname}}</view>
+    <view style="padding-top:5px">
+      <image src="../../images/rightgreen.png"></image>
+    </view>
+  </view>
+    </picker>
+  </view>
+</view>

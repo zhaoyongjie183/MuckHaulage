@@ -72,6 +72,8 @@ module.exports = {
   driverDetail: (data) => request('/driver/transinfo', 'get', data),
   //driver日列表
   transList: (data) => request('/driver/translist', 'get', data),
+  //站点列表
+  stationList: (data) => request('/driver/stationlist', 'get', data),
   //manage获取数据列表
   manageList: (data) => request('/manage/view', 'get', data)
 }
