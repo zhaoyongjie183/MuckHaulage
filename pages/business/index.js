@@ -26,7 +26,7 @@ Page({
       startdate: e.detail.value,
       datestr: statr + "-" + end,
     })
-    this.getData()
+    this.getData(this.data.dataType)
   },
   bindEndDateChange: function (e) {
     var statr = util.formatDateStr(new Date(this.data.startdate));
@@ -37,9 +37,14 @@ Page({
       enddate: e.detail.value,
       datestr: statr + "-" + end,
     })
-    this.getData()
+    this.getData(this.data.dataType)
   },
   clickDays: function () {
+    this.setData({
+      carCount: 0,
+      trainNumber: 0,
+      carMoney: 0
+    })
     this.setData({
       startdate: util.formatDate(new Date()),
       enddate: util.formatDate(new Date()),
@@ -47,9 +52,14 @@ Page({
       datestr: util.formatDateStr(new Date()),
       date: util.formatDate(new Date()),
     })
-    this.getData();
+    this.getData(this.data.dataType);
   },
   clickMonth: function () {
+    this.setData({
+      carCount: 0,
+      trainNumber: 0,
+      carMoney: 0
+    })
     var dateDay = new Date();
     var dates = dateDay.getFullYear() + "-" + (dateDay.getMonth() + 1);
     var endDay = util.getCurrentMonthDayNum(dateDay);
@@ -60,9 +70,14 @@ Page({
       date: dates,
       datestr: dateDay.getFullYear() + "年" + (dateDay.getMonth() + 1) + "月",
     })
-    this.getData();
+    this.getData(this.data.dataType);
   },
   clickCustom: function () {
+    this.setData({
+      carCount: 0,
+      trainNumber: 0,
+      carMoney: 0
+    })
     var statr = util.formatDateStr(new Date());
     var end = util.formatDateStr(new Date());
     this.setData({
@@ -71,11 +86,15 @@ Page({
       dataType: 3,
       datestr: statr + "-" + end,
     })
-    this
-      .getData();
+    this.getData(this.data.dataType);
   },
       /*日期切换 */ 
   clickLeft: function () {
+    this.setData({
+      carCount: 0,
+      trainNumber: 0,
+      carMoney: 0
+    })
     if (this.data.dataType == 1) {
       var start_date = util.mathChangeDate(this.data.date, "-", 1);
       var c = start_date.substring(0, 10);
@@ -112,7 +131,7 @@ Page({
       })
 
     }
-    this.getData()
+    this.getData(this.data.dataType)
   },
 
   //查看详情
@@ -122,11 +141,22 @@ Page({
       url: '../record/index?dateDay='+this.data.startdate
     })
   }
+  else
+  {
+    wx.navigateTo({
+      url: '../monthdetail/index?startDate='+this.data.startdate+'&endDate='+this.data.enddate
+    })
+  }
   },
 
     /*日期切换 */ 
 
   clickRight: function () {
+    this.setData({
+      carCount: 0,
+      trainNumber: 0,
+      carMoney: 0
+    })
     if (this.data.dataType == 1) {
       var start_date = util.mathChangeDate(this.data.date, "+", 1);
       var c = start_date.substring(0, 10);
@@ -162,16 +192,30 @@ Page({
         datestr: a[0] + "年" + a[1] + "月",
       })
     }
-    this.getData()
+    this.getData(this.data.dataType)
   },
   /*获取数据 */
-  getData: function () {
+  getData: function (type) {
     var that = this;
+    var dataType='d';
+    if(type==1)
+    {
+      dataType='d'
+    }
+    else if(type==2)
+    {
+      dataType='m'
+    }
+    else
+    {
+      dataType='c'
+    }
     wx.showLoading({
       "mask": true,
       "title": "加载中..."
     });
     WXAPI.driverList({
+      querytype:dataType,
       begintime: that.data.startdate,
       endtime: that.data.enddate
     }).then(function (res) {
@@ -184,9 +228,9 @@ Page({
         })
       } else {
         that.setData({
-          carCount: res.data.carsum,
-          trainNumber: res.data.total,
-          carMoney: res.data.money
+          carCount: res.data[0].carsum,
+          trainNumber: res.data[0].total,
+          carMoney: res.data[0].money
         })
       }
     }).catch(function (e) {
@@ -202,7 +246,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getData();
+    this.getData(this.data.dataType);
   },
 
   /**

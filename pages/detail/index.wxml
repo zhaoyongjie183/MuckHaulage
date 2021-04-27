@@ -1,27 +1,27 @@
 <view class="tupian">
-  <image src="../../images/home.png"></image>
+  <image src="{{baseUrl}}{{dataInfo.picpath}}"></image>
 </view>
 <view class="neirong">
   <view class="view1">驾驶员</view>
-  <view class="view2">李三</view>
+  <view class="view2">{{dataInfo.name}}</view>
 </view>
 <view class="neirong">
   <view class="view1">车牌号</view>
-  <view class="view2">李三</view>
+  <view class="view2">{{dataInfo.license}}</view>
 </view>
 <view class="neirong">
   <view class="view1">工区</view>
-  <view class="view2">李三</view>
+  <view class="view2">{{dataInfo.stationname}}</view>
 </view>
 <view class="neirong">
   <view class="view1">单价</view>
-  <view class="view2">李三</view>
+  <view class="view2">{{dataInfo.transcosts}}</view>
 </view>
 <view class="neirong">
   <view class="view1">方量</view>
-  <view class="view2">李三</view>
+  <view class="view2">{{dataInfo.weight}}</view>
 </view>
 <view class="neirong">
   <view class="view1">时间</view>
-  <view class="view2">李三</view>
+  <view class="view2">{{dataInfo.creattime}}</view>
 </view>

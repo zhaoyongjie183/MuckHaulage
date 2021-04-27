@@ -7,8 +7,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-id:'',
-baseUrl:''
+    id: '',
+    baseUrl: '',
+    dataInfo: ''
   },
   getData: function () {
     var that = this;
@@ -20,7 +21,6 @@ baseUrl:''
       id: that.data.id
     }).then(function (res) {
       wx.hideLoading()
-      debugger;
       if (res.code != 1) {
         wx.showToast({
           title: res.msg,
@@ -29,7 +29,7 @@ baseUrl:''
         })
       } else {
         that.setData({
-          list: res.data
+          dataInfo: res.data.info
         })
       }
     }).catch(function (e) {
@@ -45,7 +45,8 @@ baseUrl:''
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var str = options.id
+    //var str = options.id
+    var str = 527
     this.setData({
       id: str,
       baseUrl: WXAPI.BASE_URL

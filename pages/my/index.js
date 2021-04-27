@@ -7,10 +7,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    index: 0,
+    index: '',
     list: [],
-    userInfos:'',
-    
+    userInfos: '',
+
   },
   bindPickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -21,6 +21,7 @@ Page({
 
   getData: function (id) {
     var that = this;
+    var infoData = wx.getStorageSync('userInfoServer')
     wx.showLoading({
       "mask": true,
       "title": "加载中..."
@@ -37,7 +38,16 @@ Page({
         that.setData({
           list: res.data.stationlist
         })
-        console.log(that.data.list)
+        if (res.data != null && res.data.stationlist.length > 0) {
+          for (var i = 0; i < res.data.stationlist.length; i++) {
+            if (res.data.stationlist[i].sid == infoData.sid) {
+              that.setData({
+                index: i
+              })
+              break
+            }
+          }
+        }
       }
     }).catch(function (e) {
       wx.hideLoading()
@@ -54,7 +64,10 @@ Page({
    */
   onLoad: function (options) {
     this.getData()
-    this.data.userInfos=wx.getStorageSync('userInfoServer')
+    this.setData({
+      userInfos: wx.getStorageSync('userInfoServer')
+    })
+
   },
 
   /**

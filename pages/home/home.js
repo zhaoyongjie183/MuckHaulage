@@ -31,6 +31,7 @@ Page({
         });
       }
     }).catch(function (e) {
+      wx.hideLoading()
       console.log(e)
       wx.showToast({
         title: e.msg,
@@ -45,6 +46,7 @@ Page({
         });
       }
     }).catch(function (e) {
+      wx.hideLoading()
       console.log(e)
       wx.showToast({
         title: e.msg,

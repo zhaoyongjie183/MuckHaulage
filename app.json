@@ -1,5 +1,6 @@
 {
   "pages": [
+
     "pages/login/index",
     "pages/my/index",
     "pages/business/index",
@@ -7,7 +8,6 @@
     "pages/record/index",
     "pages/monthdetail/index",
     "pages/home/home"
-
   ],
   "window": {
     "backgroundTextStyle": "light",

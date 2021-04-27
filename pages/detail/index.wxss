@@ -8,6 +8,7 @@ page
 
 .tupian image {
   height: 210px;
+  width: 100%;
 }
 
 .neirong {
