@@ -4,7 +4,6 @@ let subDomain = '/v1' // 子域名,没有就等于''
 const API_BASE_URL = 'https://transapi.flsj.vip/trans' // 主域名
 const BASE_URL = 'https://transapi.flsj.vip/trans/v1/'
 
-
 const request = (url, method, data) => {
   let _url = API_BASE_URL + subDomain + url
   let token = getApp().globalData.token
@@ -56,6 +55,8 @@ Promise.prototype.finally = function (callback) {
 module.exports = {
   BASE_URL,
   request,
+  //token可用性检查
+  verifytoken:data=>request('/user/verifytoken','get',data),
   //发送验证码
   msgcode:data=>request('/user/verifycode','get',data),
   //登陆
@@ -67,13 +68,13 @@ module.exports = {
   //HOME新闻详情接口
   homeDetail: (data) => request('/homepage/newsdetail', 'get', data),
   //driver获取数据列表
-  driverList: (data) => request('/driver/view', 'get', data),
+  driverList: (data) => request('/' + getApp().globalData.userurl + '/view', 'get', data),
     //driver获取数据详情
-  driverDetail: (data) => request('/driver/transinfo', 'get', data),
+  driverDetail: (data) => request('/' + getApp().globalData.userurl + '/transinfo', 'get', data),
   //driver日列表
-  transList: (data) => request('/driver/translist', 'get', data),
+  transList: (data) => request('/' + getApp().globalData.userurl + '/translist', 'get', data),
   //站点列表
-  stationList: (data) => request('/driver/stationlist', 'get', data),
-  //manage获取数据列表
-  manageList: (data) => request('/manage/view', 'get', data)
+  stationList: (data) => request('/' + getApp().globalData.userurl + '/stationlist', 'get', data),
+  // //manage获取数据列表
+  // manageList: (data) => request('/' + getApp().globalData.userurl + '/view', 'get', data)
 }

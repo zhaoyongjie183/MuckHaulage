@@ -58,7 +58,7 @@ color: #666666;
 
 .detail {
   text-align: center;
-  height: 50px;
+  height: 20px;
   line-height: 50px;
 }
 

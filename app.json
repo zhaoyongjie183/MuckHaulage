@@ -1,6 +1,5 @@
 {
   "pages": [
-
     "pages/login/index",
     "pages/my/index",
     "pages/business/index",

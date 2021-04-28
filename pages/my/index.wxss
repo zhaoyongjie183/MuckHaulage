@@ -2,6 +2,9 @@
 page {
   background-color: #eaeaea;
 }
+.viewblack {
+  height: 80rpx;
+}
 
 .header {
   height: 155px;
@@ -21,6 +24,7 @@ page {
   align-items: center;
   justify-content: center;
   padding-top: 20px;
+
 }
 
 .tupian image {
@@ -28,6 +32,7 @@ page {
   height: 68px;
   align-items: center;
   justify-content: center;
+  border-radius: 34px;
 }
 .text
 {

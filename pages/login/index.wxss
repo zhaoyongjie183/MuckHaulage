@@ -1,136 +1,106 @@
-page {
-  background-color: #eaeaea;
+
+/* pages/login/login.wxss */
+
+button::after{
+  border: none;
+  border-radius: 0;
 }
 
+button{
+  border-radius: 0;
+}
+.container{
+  align-items: left;
+}
+.topblack {
+  height: 80rpx;
+}
 .title {
-  width: 120px;
-  height: 55px;
-  opacity: 1;
-  background: rgba(0, 0, 0, 0.00);
-  border-radius: 0px;
-  font-size: 20px;
-  font-family: 微软雅黑, 微软雅黑-Regular;
-  font-weight: 400;
-  text-align: left;
-  color: #000000;
-  margin: 0 auto;
-  line-height: 55px;
-  font-size: 20px;
+width: 100%;
+height: 27rpx;
+opacity: 1;
+background: rgba(0,0,0,0.00);
+font-size: 40rpx;
+font-family: 微软雅黑, 微软雅黑-Bold;
+text-align: center;
+color: #000000;
 }
-
-.ziliao {
-  padding-left: 45px;
-  width: 100px;
-  height: 19px;
-  opacity: 1;
-  background: rgba(0, 0, 0, 0.00);
-  border-radius: 0px;
-  font-size: 14px;
-  font-family: 微软雅黑, 微软雅黑-Bold;
-  font-weight: 700;
-  text-align: left;
-  color: #000000;
-  margin-top: 35px;
-}
-
-.phone {
-  display: flex;
-}
-
-.securitycode {
-  display: flex;
-  margin-top: 33px;
-}
-
-.securitycodeinput {
-  width: 139px;
-  height: 39px;
-  opacity: 1;
-  background: #ffffff;
-  border-left: 1px solid #999999;
-  border-bottom: 1px solid #999999;
-  border-top: 1px solid #999999;
-  border-radius: 3px;
-  font-size: 14px;
-  font-family: 微软雅黑, 微软雅黑-Regular;
-  font-weight: 400;
-  color: #000000;
-}
-
 .phonetitle {
-  width: 46px;
-  height: 50px;
-  opacity: 1;
-  background: rgba(0, 0, 0, 0.00);
-  border-radius: 0px;
-  font-size: 14px;
-  font-family: 微软雅黑, 微软雅黑-Regular;
-  font-weight: 400;
-  text-align: left;
-  line-height: 50px;
-  margin-right: 10px;
-  color: #000000;
-}
+height: 100px;
 
-.phoneinput {
-  width: 239px;
-  height: 39px;
-  background: #ffffff;
+}
+.phonetitletext {
+padding-left: 80rpx;
+width: 70rpx;
+height: 30rpx;
+opacity: 1;
+background: rgba(0,0,0,0.00);
+border-radius: 0rpx;
+font-size: 36rpx;
+text-align: left;
+color: #000000;
+}
+.flex-item-disptext{
+  width: 200rpx;
+  line-height: 60rpx;
+  height: 60rpx;
+  font-size: 30rpx;
+  padding-left: 80rpx;
+}
+.flex-wrp{
+  margin-top: 60rpx;
+  display:flex;
+}
+.flex-item{
+  width: 200rpx;
+  line-height: 60rpx;
+  height: 60rpx;
+  font-size: 30rpx;
+}
+.flex-item-input{
+  width: 300rpx;
+  line-height: 6rpx;
+  height: 60rpx;
+}
+.flex-item-input-ex {
+  width: 300rpx;
+  line-height: 57rpx;
+  height: 57rpx;
+  font-size: 30rpx;
   border: 1px solid #999999;
-  border-radius: 3px;
-  font-size: 14px;
-  font-family: 微软雅黑, 微软雅黑-Regular;
-  font-weight: 400;
-  color: #000000;
 }
-
-.biaoge {
-  padding-left: 45px;
-  padding-top: 40px;
+.flex-item-getcode {
+  padding-left: 0rpx;
+  width: 200rpx;
+  line-height: 60rpx;
+  height: 60rpx;
+  justify-content: center; 
 }
-
-.select {
-  margin-top: 10px;
-  margin-left: 15%;
-  height: 40px;
-  line-height: 40px;
-  background-color: white;
-  border: 1px solid black;
-  width: 70%;
-}
-
-.btn {
-  margin-top: 70px;
-}
-
-.btn-btn {
-  width: 211px;
-  height: 38px;
-  opacity: 1;
-  border: 1px solid #1a6b58;
-  border-radius: 4px;
-  font-size: 14px;
-  font-family: 微软雅黑, 微软雅黑-Bold;
-  font-weight: 700;
-  text-align: center;
-  color: #1a6b58;
-}
-
 .flex-item-getcode-ex {
-  width: 100px;
-  line-height: 41px;
-  height: 41px;
-  opacity: 1;
+  width: 180rpx;
+  line-height: 60rpx;
+  height: 60rpx;
   background: #1a6b58;
-  border-radius: 0px;
-  font-size: 14px;
-  font-family: 微软雅黑, 微软雅黑-Regular;
-  color: #ffffff;
+  color:#ffff;
+  border: 1px solid #cccccc; 
+  font-size: 30rpx;
   text-align: center;
-  margin: 0;
-  margin-left: -3px;
-  border-right: 1px solid #999999;
-  border-bottom: 1px solid #999999;
-  border-top: 1px solid #999999;
-  border-radius: 3px;
+  align-items: center;
+  justify-content: center;
+  position: relative; 
+  left: -33rpx; 
+  top: 0rpx
+}
+
+.iSubmit {
+width: 300rpx;
+line-height: 75rpx;
+height: 75rpx;
+opacity: 1;
+background: #ffffff;
+border: 1px solid #1a6b58;
+text-align: center;
+color: #1a6b58;
+align-items: center;
+justify-content: center;
 }

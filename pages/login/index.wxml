@@ -1,26 +1,24 @@
-<view>
-  <view class="title">
-    <text>绑定用户</text>
-  </view>
-  <view class="ziliao">
-    <text>验证手机号</text>
-  </view>
+<view class="container">
+  <view class="topblack"></view>
+  <view class="title">用户绑定</view>
+  <view class="topblack"></view>
+  <view class="topblack"></view>
   <view>
-    <view class="biaoge">
-      <view class="phone">
-        <text class="phonetitle">手机号 </text>
-        <input type="number" maxlength="11" class="phoneinput" bindinput="bindKeyInputPhone"
-          placeholder="请输入手机号" />
-      </view>
-      <view class="securitycode">
-        <text class="phonetitle">验证码</text>
-        <input class="securitycodeinput" bindinput="bindKeyInputName" placeholder="请输入短信验证码" />
-        <button bindtap="getverifycode" disabled="{{smsFlag}}" class="flex-item-getcode-ex">{{sendTime}}</button>
-      </view>
-    </view>
+    <text class="phonetitletext">验证手机号:</text>
   </view>
-  <view class="btn">
-    <button  class="btn-btn" bindtap="clickBinding">提交</button>
+  <view class="flex-wrp" style="flex-direction:row;">
+    <view class="flex-item "><text class="flex-item-disptext">手机号</text></view>
+    <view class="flex-item-input"><input type="number" class="flex-item-input-ex" maxlength="11"
+        bindinput="bindKeyInputPhone" placeholder=" 输入11位手机号码" /></view>
   </view>
+  <view class="flex-wrp" style="flex-direction:row;">
+    <view class="flex-item "><text class="flex-item-disptext">验证码</text></view>
+    <view class="flex-item-input"><input type="number" class="flex-item-input-ex" maxlength="4"
+        bindinput="bindKeyInputName" placeholder=" 输入验证码" /></view>
+    <button bindtap="getverifycode" disabled="{{smsFlag}}" class="flex-item-getcode-ex">{{sendTime}}</button>
+  </view>
+  <view class="topblack"></view>
+  <view class="topblack"></view>
+  <view><button bindtap="clickBinding" class="iSubmit">提交</button></view>
 
 </view>

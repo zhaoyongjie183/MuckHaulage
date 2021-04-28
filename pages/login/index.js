@@ -10,6 +10,7 @@ Page({
     sendTime: '获取验证码',
     sendColor: '#363636',
     snsMsgWait: 60,
+    userInfo:{},
   },
   /**
    * 获取手机验证码
@@ -102,39 +103,65 @@ Page({
       "mask": true,
       "title": "加载中..."
     });
-    WXAPI.login({
-      phone: that.data.phone,
-      code: that.data.code,
-      sessioncode: wx.getStorageSync('longinCode'),
-      nickname: app.globalData.userInfo.nickName,
-      headimgurl: app.globalData.userInfo.avatarUrl
-    }).then(function (res) {
-      wx.hideLoading()
-      if (res.code != 1) {
-        wx.showToast({
-          title: res.msg,
-          icon: 'none',
-          duration: 1500
-        })
+    // 登录
+    wx.login({
+      success: res => {
+        wx.setStorageSync('longinCode', res.code)
+        console.log(res.code)
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
-      else {
-        console.log('登陆成功');
-        getApp().globalData.token=res.data.token
-        wx.setStorageSync('roleId', res.data.userinfo.usertype)
-        wx.setStorageSync('userInfoServer', res.data.userinfo)
-        wx.switchTab({
-          url: '../home/home'
-        })
-      }
-    }).catch(function (e) {
-      wx.hideLoading()
-      console.log(e)
-      wx.showToast({
-        title: e.msg,
-        icon: 'none'
-      })
     })
-   
+    //4月28后getUserInfo只能返回匿名信息,getUserProfile只能用事件触发，用户发起
+    wx.getUserProfile({
+      desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+      success: (res) => {
+        console.log(res.userInfo)
+        that.setData({
+          userInfo: res.userInfo
+         })
+        // wx.setStorageSync('userInfo', res.userInfo)
+        // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+        // 所以此处加入 callback 以防止这种情况
+        // if (this.userInfoReadyCallback) {
+        //   this.userInfoReadyCallback(res)
+        // }
+        //获取用户信息成功，发送绑定请求
+        WXAPI.login({
+          phone: that.data.phone,
+          code: that.data.code,
+          sessioncode: wx.getStorageSync('longinCode'),
+          nickname: that.data.userInfo.nickName,
+          headimgurl: that.data.userInfo.avatarUrl
+        }).then(function (res) {
+          wx.hideLoading()
+          if (res.code != 1) {
+            wx.showToast({
+              title: res.msg,
+              icon: 'none',
+              duration: 1500
+            })
+          }
+          else {
+            console.log('登陆成功');
+            getApp().globalData.token=res.data.userinfo.token
+            wx.setStorageSync('roleId', res.data.userinfo.usertype)
+            wx.setStorageSync('userInfoServer', res.data.userinfo)
+            wx.switchTab({
+              url: '../home/home'
+            })
+          }
+        }).catch(function (e) {
+          wx.hideLoading()
+          console.log(e)
+          wx.showToast({
+            title: e.msg,
+            icon: 'none'
+          })
+        })
+
+      }
+    })
+
   },
   onLoad: function () {
 

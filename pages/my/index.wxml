@@ -14,6 +14,7 @@
     </view>
   </view>
   <view class="bottom"></view>
+  <view class="viewblack"></view>
   <view class="zhandian">
     <text>当前站点</text>
   </view>
